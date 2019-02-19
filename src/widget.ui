@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1171</width>
+    <height>794</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Smoothed particle hydrodynamics (SPH) | code by Matthias Varnholt (mueslee/haujobb) in 2016 | based on a webinar by Alan Heirich</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+   background-color:rgb(33, 33, 33)
+}
+
+QLabel {
+   color: rgb(177, 177, 177); 
+}
+
+QListWidget {
+   color: rgb(177, 177, 177); 
+   border: 1px solid rgb(63, 63, 63);
+}
+
+QCheckBox {
+   color: rgb(177, 177, 177); 
+   border: 1px solid rgb(63, 63, 63);
+   text-align:left;
+}
+
+QPushButton:checked {
+	background-color: rgb(80, 80, 80);
+}
+
+QPushButton {
+   color: rgb(177, 177, 177); 
+   border: 1px solid rgb(63, 63, 63);
+}
+
+QMenu {
+   color: rgb(177, 177, 177); 
+    background-color:rgb(33, 33, 33);
+    border: 1px solid black;
+}
+
+QMenu::item {
+    background-color: transparent;
+}
+
+QMenu::item:selected { 
+    background-color: rgb(63, 63, 63);
+}
+
+QPlainTextEdit {
+   color: rgb(177, 177, 177); 
+   border: 1px solid rgb(63, 63, 63);
+}
+
+
+
+QTreeWidget {
+   color: rgb(177, 177, 177); 
+   border: 1px solid rgb(63, 63, 63);
+}
+
+</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QWidget" name="layoutWidget">
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0" colspan="3">
+          <widget class="QPlainTextEdit" name="mText"/>
+         </item>
+         <item row="1" column="0" colspan="3">
+          <widget class="SphConfig" name="mAttributes">
+           <property name="columnCount">
+            <number>2</number>
+           </property>
+           <column>
+            <property name="text">
+             <string notr="true">name</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string notr="true">value</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item row="5" column="2">
+          <widget class="QPushButton" name="mQuit">
+           <property name="text">
+            <string>quit</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QPushButton" name="mRun">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255); 
+border: 1px solid rgb(128, 128, 128);
+</string>
+           </property>
+           <property name="text">
+            <string>run / pause</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QPushButton" name="mApply">
+           <property name="text">
+            <string>apply</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="3">
+          <widget class="QCheckBox" name="mDrawParticles">
+           <property name="text">
+            <string>draw particles</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" colspan="3">
+          <widget class="QCheckBox" name="mDrawVoxels">
+           <property name="text">
+            <string>draw voxels</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Preferred</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>13</width>
+           <height>100</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="Visualization" name="mVisualization">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>800</width>
+        <height>0</height>
+       </size>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>Visualization</class>
+   <extends>QFrame</extends>
+   <header>visualization.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SphConfig</class>
+   <extends>QTreeWidget</extends>
+   <header>sphconfig.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
