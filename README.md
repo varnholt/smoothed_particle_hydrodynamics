@@ -4,6 +4,7 @@ by Matthias Varnholt a.k.a mueslee^hjb in 2015/2016
 This code and my (most likely incorrect) notes below are based on a
 webinar held by Alan Heirich
 
+![animation](sph_anim.gif)
 
 ## Why SPH?
 We have a bunch of particles we'd like to animate just like real water
